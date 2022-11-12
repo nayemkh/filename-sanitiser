@@ -7,8 +7,8 @@ class Controller
     public $filenames = [];
 
     public $options = [
-        'r_underscore' => 'Replace underscores with spaces?',
-        'r_hyphen' => 'Replace hyphens with spaces?',
+        'r_underscore' => 'Replace underscores with spaces',
+        'r_hyphen' => 'Replace hyphens with spaces',
     ];
 
     public function processFileNames()
