@@ -4,6 +4,8 @@ include_once 'controller.php';
 
 $controller = new FileSanitiser\Controller();
 $controller->run();
+
+$processedFilenames = $controller->filenames;
 ?>
 
 <!DOCTYPE html>
@@ -21,5 +23,14 @@ $controller->run();
             <textarea id="filenames" name="filenames"></textarea>
             <button type="submit">Clean up</button>
         </form>
+
+        <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
+            <h2>Your sanitised filenames:</h2>
+            <ul>
+                <?php foreach ($processedFilenames as $filename) { ?>
+                    <li><?=$filename?></li>
+                <?php } ?>
+            </ul>
+        <?php } ?>
     </body>
 </html>
