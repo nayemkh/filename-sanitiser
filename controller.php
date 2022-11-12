@@ -16,6 +16,7 @@ class Controller
         $submitted = $_POST['filenames'] ?? '';
 
         if ($submitted) {
+            $submitted = htmlentities($submitted);
             $filenames = array_filter(explode(PHP_EOL, $submitted));
             if (is_array($filenames) && !empty($filenames)) {
                 foreach ($filenames as $filename) {
