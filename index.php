@@ -5,6 +5,7 @@ include_once 'controller.php';
 $controller = new FileSanitiser\Controller();
 $controller->run();
 
+$options = $controller->options;
 $processedFilenames = $controller->filenames;
 ?>
 
@@ -21,6 +22,17 @@ $processedFilenames = $controller->filenames;
         <form method="POST">
             <label for="filenames">Enter filenames you want to clean up - one filename per line</label>
             <textarea id="filenames" name="filenames"></textarea>
+
+            <?php if (is_array($options) && !empty($options)) { ?>
+                <fieldset>
+                    <legend>Options</legend>   
+                    <?php foreach ($options as $key => $option) { ?>
+                        <label for="<?=$key?>"><?=$option?></label>
+                        <input type="checkbox" id="<?=$key?>" value="1" name="<?=$key?>">
+                    <?php } ?>             
+                </fieldset>
+            <?php } ?>
+    
             <button type="submit">Clean up</button>
         </form>
 
