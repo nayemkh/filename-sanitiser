@@ -1,0 +1,26 @@
+// Colours
+$white: #FFFFFF;
+
+$page-bg: #E8F5FF;
+$text-col: #0063A3;
+
+$input-border: #005185;
+$input-border-active: #B900FF;
+
+$btn-bg: $text-col;
+$btn-text: $white;
+$btn-bg-hover: $btn-text;
+$btn-text-hover: $btn_bg;
+
+// Bootstrap 5 breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+// Mixins
+@mixin fs($value) {
+    font-size: $value + px;
+    font-size: calc($value / 16) + rem;
+}

@@ -1,0 +1,127 @@
+@import 'global';
+
+body {
+    background-color: $page-bg;
+    color: $text-col;
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    transition: .3s;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 15px;
+    @media (min-width: $sm) {
+        max-width: 540px;
+    }
+    @media (min-width: $md) {
+        max-width: 720px;
+    }
+    @media (min-width: $lg) {
+        max-width: 960px;
+    }
+    @media (min-width: $xl) {
+        max-width: 1140px;
+    }
+    @media (min-width: $xxl) {
+        max-width: 1320px;
+    }
+}
+
+.core-style {
+    *:last-child {
+        margin-bottom: 0;
+    }
+    p, ul, ol,
+    h1, h2, h3, h4, h5, h6 {
+        margin: 0 0 15px;
+    }
+    p, ul, ol, label, .form-control {
+        @include fs(16);
+        line-height: 1.5;
+    }
+    ul, ol {
+        padding-left: 20px;
+        li {
+            margin-bottom: 10px;
+        }
+    }
+    h1 {
+        @include fs(30);
+    }
+    h2 {
+        @include fs(25);
+    }
+    .form-control {
+        width: 100%;
+        border: 0;
+        outline: 0;
+        box-shadow: 0 0 0 1px $input-border;
+        transition: box-shadow .3s;
+        &:focus {
+            box-shadow: 0 0 0 2px $input-border-active;
+        }
+    }
+    textarea {
+        max-width: 100%;
+        min-height: 200px;
+    }
+    fieldset {
+        border-color: $text-col;
+        legend {
+            font-weight: 700;
+        }
+    }
+    @media (min-width: $md) {
+        p, ul, ol,
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0 0 20px;
+        }
+        p, ul, ol, label, .form-control {
+            @include fs(18);
+        }
+        h1 {
+            @include fs(35);
+        }
+        h2 {
+            @include fs(30);
+        }
+    }
+}
+
+// Template styles
+.form {
+    margin-bottom: 20px;
+}
+
+// Component styles
+.form-group {
+    margin-bottom: 15px;
+    &.block {
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.btn {
+    @include fs(16);
+    background-color: $btn-bg;
+    color: $btn_text;
+    padding: 8px 12px;
+    border: 2px solid $btn-bg;
+    cursor: pointer;
+    transition: .3s;
+    font-family: inherit;
+    margin-bottom: 20px;
+    &:hover, &:focus, &:active {
+        background-color: $btn-bg-hover;
+        color: $btn-text-hover;
+    }
+}

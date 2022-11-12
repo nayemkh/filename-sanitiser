@@ -1,3 +1,138 @@
+body {
+  background-color: #E8F5FF;
+  color: #0063A3;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  transition: 0.3s;
+}
 
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+.core-style *:last-child {
+  margin-bottom: 0;
+}
+.core-style p, .core-style ul, .core-style ol,
+.core-style h1, .core-style h2, .core-style h3, .core-style h4, .core-style h5, .core-style h6 {
+  margin: 0 0 15px;
+}
+.core-style p, .core-style ul, .core-style ol, .core-style label, .core-style .form-control {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.core-style ul, .core-style ol {
+  padding-left: 20px;
+}
+.core-style ul li, .core-style ol li {
+  margin-bottom: 10px;
+}
+.core-style h1 {
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+.core-style h2 {
+  font-size: 25px;
+  font-size: 1.5625rem;
+}
+.core-style .form-control {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  box-shadow: 0 0 0 1px #005185;
+  transition: box-shadow 0.3s;
+}
+.core-style .form-control:focus {
+  box-shadow: 0 0 0 2px #B900FF;
+}
+.core-style textarea {
+  max-width: 100%;
+  min-height: 200px;
+}
+.core-style fieldset {
+  border-color: #0063A3;
+}
+.core-style fieldset legend {
+  font-weight: 700;
+}
+@media (min-width: 768px) {
+  .core-style p, .core-style ul, .core-style ol,
+  .core-style h1, .core-style h2, .core-style h3, .core-style h4, .core-style h5, .core-style h6 {
+    margin: 0 0 20px;
+  }
+  .core-style p, .core-style ul, .core-style ol, .core-style label, .core-style .form-control {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+  .core-style h1 {
+    font-size: 35px;
+    font-size: 2.1875rem;
+  }
+  .core-style h2 {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+}
+
+.form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group.block label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.btn {
+  font-size: 16px;
+  font-size: 1rem;
+  background-color: #0063A3;
+  color: #FFFFFF;
+  padding: 8px 12px;
+  border: 2px solid #0063A3;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: inherit;
+  margin-bottom: 20px;
+}
+.btn:hover, .btn:focus, .btn:active {
+  background-color: #FFFFFF;
+  color: #0063A3;
+}
 
 /*# sourceMappingURL=style.css.map */
