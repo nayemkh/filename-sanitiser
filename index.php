@@ -29,7 +29,7 @@ $processedFilenames = $controller->filenames;
                     <h1 class="page-title">Clean up your filenames!</h1>
                     <form method="POST" class="form">
                         <div class="form-group block">
-                            <label for="filenames">Enter filenames you want to clean up - one filename per line</label>
+                            <label for="filenames">Enter filenames you want to clean up, there should only be one filename per line.</label>
                             <textarea class="form-control" id="filenames" name="filenames"></textarea>
                         </div>
             
