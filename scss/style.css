@@ -71,7 +71,7 @@ body {
   border: 0;
   outline: 0;
   border-radius: 5px;
-  box-shadow: 0 0 0 1px #005185;
+  box-shadow: 0 0 0 1px #0063A3;
   transition: box-shadow 0.3s;
 }
 .core-style .form-control:focus {
@@ -104,6 +104,32 @@ body {
   .core-style h2 {
     font-size: 30px;
     font-size: 1.875rem;
+  }
+}
+
+.header {
+  background-color: #0063A3;
+  color: #FFFFFF;
+  padding: 10px 0;
+}
+.header .page-title {
+  color: inherit;
+}
+@media (min-width: 768px) {
+  .header {
+    padding: 20px 0;
+  }
+}
+
+.main {
+  padding: 10px 0;
+}
+.main .page-title {
+  color: inherit;
+}
+@media (min-width: 768px) {
+  .main {
+    padding: 20px 0;
   }
 }
 

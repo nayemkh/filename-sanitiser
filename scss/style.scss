@@ -96,6 +96,28 @@ body {
 }
 
 // Template styles
+.header {
+    background-color: $header-bg;
+    color: $header-text;
+    padding: 10px 0;
+    .page-title {
+        color: inherit;
+    }
+    @media (min-width: $md) {
+        padding: 20px 0;
+    }
+}
+
+.main {
+    padding: 10px 0;
+    .page-title {
+        color: inherit;
+    }
+    @media (min-width: $md) {
+        padding: 20px 0;
+    }
+}
+
 .form {
     margin-bottom: 20px;
 }

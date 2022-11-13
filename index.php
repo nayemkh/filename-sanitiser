@@ -23,11 +23,17 @@ $processedFilenames = $controller->filenames;
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <script src="/js/app.js"></script>
     </head>
+    <header class="header">
+        <div class="container">
+            <div class="core-style">
+                <h1 class="page-title">Filename Sanitiser</h1>
+            </div>
+        </div>
+    </header>
     <body>
-        <main>
+        <main class="main">
             <div class="container">
                 <div class="core-style">
-                    <h1 class="page-title">Clean up your filenames!</h1>
                     <form method="POST" class="form">
                         <div class="form-group block">
                             <label for="filenames">Enter filenames you want to clean up, there should only be one filename per line.</label>

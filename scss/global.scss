@@ -1,11 +1,15 @@
 // Colours
 $white: #FFFFFF;
+$main-blue: #0063A3;
 
 $page-bg: #E8F5FF;
-$text-col: #0063A3;
+$header-bg: $main-blue;
+$header-text: $white;
+
+$text-col: $main-blue;
 $main-active: #B900FF;
 
-$input-border: #005185;
+$input-border: $main-blue;
 $input-border-active: $main-active;
 
 $btn-bg: $text-col;
