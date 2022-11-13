@@ -68,6 +68,7 @@ body {
 }
 .core-style .form-control {
   width: 100%;
+  padding: 10px;
   border: 0;
   outline: 0;
   border-radius: 5px;
