@@ -150,6 +150,12 @@ body {
         }
     }
 }
+.form-action {
+    margin-top: 20px;
+    @media (min-width: $md) {
+        margin-top: 30px;
+    }
+}
 
 .btn {
     @include fs(16);
@@ -164,5 +170,8 @@ body {
     margin-bottom: 20px;
     &:hover, &:focus, &:active {
         background-color: $btn-bg-hover;
+    }
+    @media (min-width: $md) {
+        @include fs(18);
     }
 }

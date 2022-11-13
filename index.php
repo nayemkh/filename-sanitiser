@@ -62,11 +62,13 @@ $processedFilenames = $controller->filenames;
                             </div>
                         <?php } ?>
                 
-                        <button class="btn" type="submit" aria-label="Submit filenames for clean-up">Clean up</button>
-
-                        <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
-                            <button class="btn" type="button" id="clear-form" aria-label="Clear entered data and results">Clear form</button>
-                        <?php } ?>
+                        <div class="form-action">
+                            <button class="btn" type="submit" aria-label="Submit filenames for clean-up">Clean up</button>
+    
+                            <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
+                                <button class="btn" type="button" id="clear-form" aria-label="Clear entered data and results">Clear form</button>
+                            <?php } ?>
+                        </div>
                     </form>
             
                     <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
