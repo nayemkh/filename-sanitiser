@@ -50,6 +50,12 @@ $processedFilenames = $controller->filenames;
                                             <input type="checkbox" id="<?=$key?>" value="1" name="<?=$key?>" <?=$checkedHTML?>>
                                             <label for="<?=$key?>"><?=$option?></label>
                                         </div>
+                                        <?php if ($key === 'capitalise_word') { ?>
+                                            <div class="form-group block ignore-words">
+                                                <label for="ignore-words">Ignore specific words from capitalisation (comma separated):</label>
+                                                <input class="form-control" type="text" name="ignore-words" id="ignore-words" value="<?= isset($_POST['ignore-words']) ? trim($_POST['ignore-words']) : '' ?>">
+                                            </div>
+                                        <?php } ?>
                                     <?php } ?>             
                                 </fieldset>
                             </div>

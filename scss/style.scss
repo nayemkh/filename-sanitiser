@@ -12,6 +12,10 @@ body {
     box-sizing: border-box;
 }
 
+.show-item {
+    display: block !important;
+}
+
 .container {
     margin: 0 auto;
     padding: 0 15px;
@@ -127,6 +131,12 @@ body {
 
 .form {
     margin-bottom: 20px;
+    .form-group {
+        &.ignore-words {
+            margin-top: 10px;
+            display: none;
+        }
+    }
 }
 
 // Component styles
