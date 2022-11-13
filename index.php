@@ -30,15 +30,16 @@ $processedFilenames = $controller->filenames;
                     <form method="POST" class="form">
                         <div class="form-group block">
                             <label for="filenames">Enter filenames you want to clean up, there should only be one filename per line.</label>
-                            <textarea class="form-control" id="filenames" name="filenames"></textarea>
+                            <textarea class="form-control" id="filenames" name="filenames"><?= isset($_POST['filenames']) ? trim($_POST['filenames']) : '' ?></textarea>
                         </div>
             
                         <?php if (is_array($options) && !empty($options)) { ?>
                             <div class="form-group">
                                 <fieldset>
                                     <legend>Options</legend>   
-                                    <?php foreach ($options as $key => $option) { ?>
-                                        <input type="checkbox" id="<?=$key?>" value="1" name="<?=$key?>">
+                                    <?php foreach ($options as $key => $option) {
+                                        $checkedHTML = isset($_POST[$key]) && $_POST[$key] === '1' ? 'checked' : '' ?>
+                                        <input type="checkbox" id="<?=$key?>" value="1" name="<?=$key?>" <?=$checkedHTML?>>
                                         <label for="<?=$key?>"><?=$option?></label>
                                     <?php } ?>             
                                 </fieldset>
