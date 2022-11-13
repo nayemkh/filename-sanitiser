@@ -21,6 +21,7 @@ $processedFilenames = $controller->filenames;
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <script src="/js/app.js"></script>
     </head>
     <body>
         <main>
@@ -47,6 +48,10 @@ $processedFilenames = $controller->filenames;
                         <?php } ?>
                 
                         <button class="btn" type="submit">Clean up</button>
+
+                        <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
+                            <button class="btn" type="button" id="clear-form">Clear form</button>
+                        <?php } ?>
                     </form>
             
                     <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
