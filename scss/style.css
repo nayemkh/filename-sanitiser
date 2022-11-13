@@ -126,7 +126,7 @@ body {
   background-color: #0063A3;
   color: #FFFFFF;
   padding: 8px 12px;
-  border: 2px solid #0063A3;
+  border: 0;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
@@ -134,8 +134,7 @@ body {
   margin-bottom: 20px;
 }
 .btn:hover, .btn:focus, .btn:active {
-  background-color: #FFFFFF;
-  color: #0063A3;
+  background-color: #B900FF;
 }
 
 /*# sourceMappingURL=style.css.map */

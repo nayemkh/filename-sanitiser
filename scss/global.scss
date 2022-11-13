@@ -3,14 +3,14 @@ $white: #FFFFFF;
 
 $page-bg: #E8F5FF;
 $text-col: #0063A3;
+$main-active: #B900FF;
 
 $input-border: #005185;
-$input-border-active: #B900FF;
+$input-border-active: $main-active;
 
 $btn-bg: $text-col;
 $btn-text: $white;
-$btn-bg-hover: $btn-text;
-$btn-text-hover: $btn_bg;
+$btn-bg-hover: $main-active;
 
 // Bootstrap 5 breakpoints
 $sm: 576px;
