@@ -45,10 +45,11 @@ $processedFilenames = $controller->filenames;
                                 <fieldset>
                                     <legend>Options</legend>   
                                     <?php foreach ($options as $key => $option) {
-                                        $checkedHTML = isset($_POST[$key]) && $_POST[$key] === '1' ? 'checked' : '' ?>
+                                        $optionID = str_replace('_', '-', $key);
+                                        $checkedHTML = isset($_POST[$optionID]) && $_POST[$optionID] === '1' ? 'checked' : '' ?>
                                         <div class="checkbox-group">
-                                            <input type="checkbox" id="<?=$key?>" value="1" name="<?=$key?>" <?=$checkedHTML?>>
-                                            <label for="<?=$key?>"><?=$option?></label>
+                                            <input type="checkbox" id="<?=$optionID?>" value="1" name="<?=$optionID?>" <?=$checkedHTML?>>
+                                            <label for="<?=$optionID?>"><?=$option?></label>
                                         </div>
                                         <?php if ($key === 'capitalise_word') { ?>
                                             <div class="form-group block ignore-words">

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const clearForm = document.getElementById('clear-form');
-    const capitaliseWord = document.getElementById('capitalise_word');
+    const capitaliseWord = document.getElementById('capitalise-word');
 
     if (clearForm) {
         clearForm.addEventListener('click', () => {

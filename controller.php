@@ -23,15 +23,15 @@ class Controller
             }
 
             foreach ($filenames as $filename) {
-                if (isset($_POST['r_underscore']) && $_POST['r_underscore'] === '1') {
+                if (isset($_POST['r-underscore']) && $_POST['r-underscore'] === '1') {
                     $filename = str_replace('_', ' ', $filename);
                 }
 
-                if (isset($_POST['r_hyphen']) && $_POST['r_hyphen'] === '1') {
+                if (isset($_POST['r-hyphen']) && $_POST['r-hyphen'] === '1') {
                     $filename = str_replace('-', ' ', $filename);
                 }
 
-                if (isset($_POST['capitalise_word']) && $_POST['capitalise_word'] === '1') {
+                if (isset($_POST['capitalise-word']) && $_POST['capitalise-word'] === '1') {
                     $words = explode(' ', $filename);
                     $capitalisedWords = [];
                     foreach ($words as $word) {
