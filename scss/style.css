@@ -87,6 +87,8 @@ body {
   border-color: #0063A3;
 }
 .core-style fieldset legend {
+  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
 }
 @media (min-width: 768px) {
@@ -105,6 +107,10 @@ body {
   .core-style h2 {
     font-size: 30px;
     font-size: 1.875rem;
+  }
+  .core-style fieldset legend {
+    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 

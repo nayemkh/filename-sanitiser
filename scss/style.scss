@@ -76,6 +76,7 @@ body {
         border-radius: 8px;
         border-color: $text-col;
         legend {
+            @include fs(16);
             font-weight: 700;
         }
     }
@@ -92,6 +93,11 @@ body {
         }
         h2 {
             @include fs(30);
+        }
+        fieldset {
+            legend {
+                @include fs(18);
+            }
         }
     }
 }

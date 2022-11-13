@@ -46,8 +46,10 @@ $processedFilenames = $controller->filenames;
                                     <legend>Options</legend>   
                                     <?php foreach ($options as $key => $option) {
                                         $checkedHTML = isset($_POST[$key]) && $_POST[$key] === '1' ? 'checked' : '' ?>
-                                        <input type="checkbox" id="<?=$key?>" value="1" name="<?=$key?>" <?=$checkedHTML?>>
-                                        <label for="<?=$key?>"><?=$option?></label>
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="<?=$key?>" value="1" name="<?=$key?>" <?=$checkedHTML?>>
+                                            <label for="<?=$key?>"><?=$option?></label>
+                                        </div>
                                     <?php } ?>             
                                 </fieldset>
                             </div>
