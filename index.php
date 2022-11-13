@@ -38,8 +38,8 @@ $processedFilenames = $controller->filenames;
                                 <fieldset>
                                     <legend>Options</legend>   
                                     <?php foreach ($options as $key => $option) { ?>
-                                        <label for="<?=$key?>"><?=$option?></label>
                                         <input type="checkbox" id="<?=$key?>" value="1" name="<?=$key?>">
+                                        <label for="<?=$key?>"><?=$option?></label>
                                     <?php } ?>             
                                 </fieldset>
                             </div>
