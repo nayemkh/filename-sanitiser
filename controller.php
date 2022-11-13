@@ -17,7 +17,6 @@ class Controller
         $submitted = htmlentities($_POST['filenames']);
         $filenames = array_filter(explode(PHP_EOL, $submitted));
         if (is_array($filenames) && !empty($filenames)) {
-
             if (isset($_POST['ignore-words']) && trim($_POST['ignore-words']) !== '') {
                 $ignoredWords = array_map('strtolower', explode(',', $_POST['ignore-words']));
                 $ignoredWords = array_map('trim', $ignoredWords);
