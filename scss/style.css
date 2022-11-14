@@ -135,6 +135,13 @@ body {
 .form-area {
   padding: 20px 0;
 }
+.form-area .messages {
+  background-color: #C5E6FF;
+  border: 1px solid;
+  padding: 10px;
+  list-style: none;
+  border-radius: 5px;
+}
 .form-area .form .form-group.ignore-words {
   margin-top: 10px;
   display: none;

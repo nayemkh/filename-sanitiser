@@ -7,6 +7,7 @@ $controller->run();
 
 $options = $controller->options;
 $processedFilenames = $controller->filenames;
+$messages = $controller->messages;
 ?>
 
 <!DOCTYPE html>
@@ -35,6 +36,13 @@ $processedFilenames = $controller->filenames;
             <div class="form-area">
                 <div class="container">
                     <div class="core-style">
+                        <?php if (is_array($messages) & !empty($messages)) { ?>
+                            <ul class="messages">
+                                <?php foreach ($messages as $message) { ?>
+                                    <li><?=$message?></li>
+                                <?php } ?>
+                            </ul>
+                        <?php } ?>
                         <form method="POST" class="form">
                             <div class="form-group block">
                                 <label for="filenames">Enter filenames you want to clean up, there should only be one filename per line.</label>

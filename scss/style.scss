@@ -121,6 +121,13 @@ body {
 
 .form-area {
     padding: 20px 0;
+    .messages {
+        background-color: $message-bg;
+        border: 1px solid;
+        padding: 10px;
+        list-style: none;
+        border-radius: 5px;
+    }
     .form {
         .form-group {
             &.ignore-words {
