@@ -37,7 +37,7 @@ $processedFilenames = $controller->filenames;
                     <form method="POST" class="form">
                         <div class="form-group block">
                             <label for="filenames">Enter filenames you want to clean up, there should only be one filename per line.</label>
-                            <textarea class="form-control" id="filenames" name="filenames"><?= isset($_POST['filenames']) ? trim($_POST['filenames']) : '' ?></textarea>
+                            <textarea class="form-control" id="filenames" name="filenames" required><?= isset($_POST['filenames']) ? trim($_POST['filenames']) : '' ?></textarea>
                         </div>
             
                         <?php if (is_array($options) && !empty($options)) { ?>
