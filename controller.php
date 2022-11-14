@@ -15,7 +15,7 @@ class Controller
 
     public $messages = [];
 
-    public function processFileNames()
+    public function processFilenames()
     {
         $submitted = htmlentities($_POST['filenames']);
         $filenames = array_filter(explode(PHP_EOL, $submitted));
@@ -76,7 +76,7 @@ class Controller
                 }
             }
             if (isset($optionSelected)) {
-                $this->processFileNames();
+                $this->processFilenames();
             } else {
                 $this->messages[] = 'You must select an option';
             }
