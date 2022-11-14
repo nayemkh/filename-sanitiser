@@ -10,6 +10,7 @@ class Controller
         'r_underscore' => 'Replace underscores with spaces',
         'r_hyphen' => 'Replace hyphens with spaces',
         'r_ext' => 'Remove file extension (detects the <strong>last</strong> full stop and gets rid of it along with any subsequent text)',
+        'capitalise_first_word' => 'Capitalise first word',
         'capitalise_word' => 'Capitalise first letter of each word',
     ];
 
@@ -55,6 +56,10 @@ class Controller
                         $capitalisedWords[] = ucfirst($word);
                     }
                     $filename = implode(' ', $capitalisedWords);
+                }
+
+                if (isset($_POST['capitalise-first-word']) && $_POST['capitalise-first-word'] === '1') {
+                    $filename = ucfirst($filename);
                 }
 
                 $this->filenames[] = $filename;
