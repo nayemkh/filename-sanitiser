@@ -74,11 +74,14 @@ $processedFilenames = $controller->filenames;
                     </div>
                 </div>
             </div>
-            <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
+            <?php if (is_array($processedFilenames) && !empty($processedFilenames)) {
+                $filenameCount = count($processedFilenames);
+                $filenameText = $filenameCount > 1 ? 'filenames:' : 'filename:';
+                $resultsHeading = 'You have sanitised ' . $filenameCount . ' ' . $filenameText; ?>
                 <div class="results">
                     <div class="container">
                         <div class="core-style">
-                            <h2>Your sanitised filenames:</h2>
+                            <h2 class="results-heading"><?=$resultsHeading?></h2>
                             <ul>
                                 <?php foreach ($processedFilenames as $filename) { ?>
                                     <li><?=$filename?></li>
