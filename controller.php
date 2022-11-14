@@ -13,6 +13,8 @@ class Controller
         'capitalise_word' => 'Capitalise first letter of each word',
     ];
 
+    public $messages = [];
+
     public function processFileNames()
     {
         $submitted = htmlentities($_POST['filenames']);
@@ -63,7 +65,21 @@ class Controller
     public function run()
     {
         if (isset($_POST['filenames']) && trim($_POST['filenames'] !== '')) {
-            $this->processFileNames();
+            // Don't run sanitiser unless an option is selected
+            if (is_array($this->options) && !empty($this->options)) {
+                foreach ($this->options as $key => $option) {
+                    $optionName = str_replace('_', '-', $key);
+                    if (isset($_POST[$optionName]) && $_POST[$optionName] === '1') {
+                        $optionSelected = true;
+                        continue;
+                    }
+                }
+            }
+            if (isset($optionSelected)) {
+                $this->processFileNames();
+            } else {
+                $this->messages[] = 'You must select an option';
+            }
         }
     }
 }
