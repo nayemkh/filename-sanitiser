@@ -32,55 +32,62 @@ $processedFilenames = $controller->filenames;
             </div>
         </header>
         <main class="main">
-            <div class="container">
-                <div class="core-style">
-                    <form method="POST" class="form">
-                        <div class="form-group block">
-                            <label for="filenames">Enter filenames you want to clean up, there should only be one filename per line.</label>
-                            <textarea class="form-control" id="filenames" name="filenames" required><?= isset($_POST['filenames']) ? trim($_POST['filenames']) : '' ?></textarea>
-                        </div>
-            
-                        <?php if (is_array($options) && !empty($options)) { ?>
-                            <div class="form-group">
-                                <fieldset>
-                                    <legend>Options</legend>   
-                                    <?php foreach ($options as $key => $option) {
-                                        $optionID = str_replace('_', '-', $key);
-                                        $checkedHTML = isset($_POST[$optionID]) && $_POST[$optionID] === '1' ? 'checked' : '' ?>
-                                        <div class="checkbox-group">
-                                            <input type="checkbox" id="<?=$optionID?>" value="1" name="<?=$optionID?>" <?=$checkedHTML?>>
-                                            <label for="<?=$optionID?>"><?=$option?></label>
-                                        </div>
-                                        <?php if ($key === 'capitalise_word') { ?>
-                                            <div class="form-group block ignore-words">
-                                                <label for="ignore-words">Ignore specific words from capitalisation (comma separated):</label>
-                                                <input class="form-control" type="text" name="ignore-words" id="ignore-words" value="<?= isset($_POST['ignore-words']) ? trim($_POST['ignore-words']) : '' ?>">
-                                            </div>
-                                        <?php } ?>
-                                    <?php } ?>             
-                                </fieldset>
+            <div class="form-area">
+                <div class="container">
+                    <div class="core-style">
+                        <form method="POST" class="form">
+                            <div class="form-group block">
+                                <label for="filenames">Enter filenames you want to clean up, there should only be one filename per line.</label>
+                                <textarea class="form-control" id="filenames" name="filenames" required><?= isset($_POST['filenames']) ? trim($_POST['filenames']) : '' ?></textarea>
                             </div>
-                        <?php } ?>
                 
-                        <div class="form-action">
-                            <button class="btn" type="submit" aria-label="Submit filenames for clean-up">Clean up</button>
-    
-                            <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
-                                <button class="btn" type="button" id="clear-form" aria-label="Clear entered data and results">Clear form</button>
+                            <?php if (is_array($options) && !empty($options)) { ?>
+                                <div class="form-group">
+                                    <fieldset>
+                                        <legend>Options</legend>   
+                                        <?php foreach ($options as $key => $option) {
+                                            $optionID = str_replace('_', '-', $key);
+                                            $checkedHTML = isset($_POST[$optionID]) && $_POST[$optionID] === '1' ? 'checked' : '' ?>
+                                            <div class="checkbox-group">
+                                                <input type="checkbox" id="<?=$optionID?>" value="1" name="<?=$optionID?>" <?=$checkedHTML?>>
+                                                <label for="<?=$optionID?>"><?=$option?></label>
+                                            </div>
+                                            <?php if ($key === 'capitalise_word') { ?>
+                                                <div class="form-group block ignore-words">
+                                                    <label for="ignore-words">Ignore specific words from capitalisation (comma separated):</label>
+                                                    <input class="form-control" type="text" name="ignore-words" id="ignore-words" value="<?= isset($_POST['ignore-words']) ? trim($_POST['ignore-words']) : '' ?>">
+                                                </div>
+                                            <?php } ?>
+                                        <?php } ?>             
+                                    </fieldset>
+                                </div>
                             <?php } ?>
-                        </div>
-                    </form>
-            
-                    <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
-                        <h2>Your sanitised filenames:</h2>
-                        <ul>
-                            <?php foreach ($processedFilenames as $filename) { ?>
-                                <li><?=$filename?></li>
-                            <?php } ?>
-                        </ul>
-                    <?php } ?>
+                    
+                            <div class="form-action">
+                                <button class="btn" type="submit" aria-label="Submit filenames for clean-up">Clean up</button>
+        
+                                <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
+                                    <button class="btn" type="button" id="clear-form" aria-label="Clear entered data and results">Clear form</button>
+                                <?php } ?>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
+            <?php if (is_array($processedFilenames) && !empty($processedFilenames)) { ?>
+                <div class="results">
+                    <div class="container">
+                        <div class="core-style">
+                            <h2>Your sanitised filenames:</h2>
+                            <ul>
+                                <?php foreach ($processedFilenames as $filename) { ?>
+                                    <li><?=$filename?></li>
+                                <?php } ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
         </main>
     </body>
 </html>
