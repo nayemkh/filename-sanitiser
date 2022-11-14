@@ -37,7 +37,7 @@ $messages = $controller->messages;
                 <div class="container">
                     <div class="core-style">
                         <?php if (is_array($messages) & !empty($messages)) { ?>
-                            <ul class="messages">
+                            <ul class="messages" role="status">
                                 <?php foreach ($messages as $message) { ?>
                                     <li><?=$message?></li>
                                 <?php } ?>
