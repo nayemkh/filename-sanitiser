@@ -9,6 +9,7 @@ class Controller
     public $options = [
         'r_underscore' => 'Replace underscores with spaces',
         'r_hyphen' => 'Replace hyphens with spaces',
+        'r_ext' => 'Remove file extension (detects the <strong>last</strong> full stop and gets rid of it along with any subsequent text)',
         'capitalise_word' => 'Capitalise first letter of each word',
     ];
 
@@ -29,6 +30,13 @@ class Controller
 
                 if (isset($_POST['r-hyphen']) && $_POST['r-hyphen'] === '1') {
                     $filename = str_replace('-', ' ', $filename);
+                }
+
+                if (isset($_POST['r-ext']) && $_POST['r-ext'] === '1') {
+                    $fullStop = strrpos($filename, '.');
+                    if ($fullStop) {
+                        $filename = substr($filename, 0, $fullStop);
+                    }
                 }
 
                 if (isset($_POST['capitalise-word']) && $_POST['capitalise-word'] === '1') {
