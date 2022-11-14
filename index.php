@@ -23,14 +23,14 @@ $processedFilenames = $controller->filenames;
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
         <script src="/js/app.js"></script>
     </head>
-    <header class="header">
-        <div class="container">
-            <div class="core-style">
-                <h1 class="page-title">Filename Sanitiser</h1>
-            </div>
-        </div>
-    </header>
     <body>
+        <header class="header">
+            <div class="container">
+                <div class="core-style">
+                    <h1 class="page-title">Filename Sanitiser</h1>
+                </div>
+            </div>
+        </header>
         <main class="main">
             <div class="container">
                 <div class="core-style">
