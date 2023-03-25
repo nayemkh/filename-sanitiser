@@ -59,7 +59,19 @@ class Controller
                 }
 
                 if (isset($_POST['capitalise-first-letter']) && $_POST['capitalise-first-letter'] === '1') {
-                    $filename = ucfirst($filename);
+                    $capitalise = true;
+
+                    // Don't capitalise word if specified to be ignored
+                    $firstWord = strtok($filename, ' ');
+                    if ((isset($ignoredWords)) && is_array($ignoredWords) && !empty($ignoredWords)) {
+                        if (in_array(strtolower($firstWord), $ignoredWords)) {
+                            $capitalise = false;
+                        }
+                    }
+
+                    if ($capitalise) {
+                        $filename = ucfirst($filename);
+                    }
                 }
 
                 $this->filenames[] = $filename;
